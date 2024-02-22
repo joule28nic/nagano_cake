@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col-4 text-center">
+      <h3>マイページ</h3>
+    </div>
+  </div>
+
+  <div class="row pb-3">
+    <div class="col-2 d-flex align-items-center">
+      <h5 class="mb-0">登録情報</h5>
+    </div>
+    <div class="col-2">
+      <%= link_to "編集する", customers_information_edit_path(current_customer.id), class: "btn btn-success btn-block" %>
+    </div>
+  </div>
+
+  <div class="row pb-3">
+    <table class="col-8 table table-bordered">
+      <tbody>
+        <tr>
+          <th>氏名</th>
+          <th><%= current_customer.last_name %><span>　</span><%= current_customer.first_name %></th>
+        </tr>
+        <tr>
+          <th>カナ</th>
+          <th><%= current_customer.last_name_kana %><span>　</span><%= current_customer.first_name_kana %></th>
+        </tr>
+        <tr>
+          <th>郵便番号</th>
+          <th><%= current_customer.postal_code %></th>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <th><%= current_customer.address %></th>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <th><%= current_customer.telephone_number %></th>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <th><%= current_customer.email %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row pb-3">
+    <div class="col-2 d-flex align-items-center">
+      <h5 class="mb-0">配送先</h5>
+    </div>
+    <div class="col-2">
+      <!--後でリンク変更-->
+      <%= link_to "一覧を見る", customers_information_edit_path(current_customer.id), class: "btn btn-primary btn-block" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 d-flex align-items-center">
+      <h5 class="mb-0">注文履歴</h5>
+    </div>
+    <div class="col-2">
+      <!--後でリンク変更-->
+      <%= link_to "一覧を見る", customers_information_edit_path(current_customer.id), class: "btn btn-primary btn-block" %>
+    </div>
+  </div>
+
+</div>
