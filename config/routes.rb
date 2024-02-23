@@ -22,10 +22,10 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get 'home/about' => 'homes#about', as: :about
-    get 'customers/my_page' => 'public/customers#show'
-    get 'customers/information/edit' => 'public/customers#edit'
-    get '/customers/unsubscribe' => 'public/customers#unsubscribe', as: 'unsubscribe'
-    patch '/customers/withdraw' => 'public/customers#withdrawal', as: 'withdrawal'
+    get 'customers/my_page' => 'customers#show', as: 'my_page'
+    get 'customers/information/edit' => 'customers#edit'
+    get '/customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
+    patch '/customers/withdraw' => 'customers#withdrawal', as: 'withdrawal'
   end
 
 end
