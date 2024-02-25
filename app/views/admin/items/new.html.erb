@@ -37,11 +37,11 @@
         <div class="field row mb-5">
           <label class="col-sm-4 col-form-label">販売ステータス</label>
           <div class="col-3">
-            <%= f.radio_button :is_active, "true", :checked => params[:is_active] == "true" %>
+            <%= f.radio_button :is_active, "true", :checked => true %>
             <%= f.label :is_active, "販売中", {value: :true} %>
           </div>
           <div class="col-3">
-            <%= f.radio_button :is_active, "false", :checked => params[:is_active] == "false" %>
+            <%= f.radio_button :is_active, "false" %>
             <%= f.label :is_active, "販売停止中", {value: :false}  %>
           </div>
         </div>

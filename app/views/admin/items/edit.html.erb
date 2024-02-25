@@ -25,7 +25,7 @@
 
         <div class="field row mb-3">
           <label class="col-sm-4 col-form-label">ジャンル</label>
-          <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), {include_blank: "--選択してください--"}, class: "col-sm-7" %>
+          <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name, @item.genre_id), class: "col-sm-7" %>
         </div>
 
         <div class="field row mb-3">
@@ -37,11 +37,11 @@
         <div class="field row mb-5">
           <label class="col-sm-4 col-form-label">販売ステータス</label>
           <div class="col-3">
-            <%= f.radio_button :is_active, "true", :checked => params[:is_active] == "true" %>
+            <%= f.radio_button :is_active, "true", :checked => @item.is_active == true %>
             <%= f.label :is_active, "販売中", {value: :true} %>
           </div>
           <div class="col-3">
-            <%= f.radio_button :is_active, "false", :checked => params[:is_active] == "false" %>
+            <%= f.radio_button :is_active, "false", :checked => @item.is_active == false %>
             <%= f.label :is_active, "販売停止中", {value: :false}  %>
           </div>
         </div>
