@@ -20,7 +20,7 @@
           <% @customers.each do |customer| %>
           <tr>
             <td class="align-middle"><%= customer.id %></td>
-            <td class="align-middle"><%= customer.last_name %><%= customer.first_name %></td>
+            <td class="align-middle"><%= link_to customer.name, admin_customer_path(customer) %></td>
             <td class="align-middle"><%= customer.email %></td>
             <td class="align-middle"><%= customer.is_active? ? '有効' : '退会' %></td>
           </tr>
