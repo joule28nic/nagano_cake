@@ -10,12 +10,12 @@
       <%= form_with model: @admin, url: admin_session_path do |f| %>
         <div class="field row my-3">
           <label for="email" class="col-sm-4 col-form-label">メールアドレス</label>
-          <%= f.email_field :email, autofocus: true, class: "col-sm-8", placeholder: "sample@example.com" %>
+          <%= f.email_field :email, autofocus: true, class: "col-sm-8", id: "email", placeholder: "sample@example.com" %>
         </div>
 
         <div class="field row mb-5">
           <label for="password" class="col-sm-4 col-form-label">パスワード</label>
-          <%= f.password_field :password, class: "col-sm-8" %>
+          <%= f.password_field :password, class: "col-sm-8", id: "password" %>
         </div>
 
         <div class="actions">
