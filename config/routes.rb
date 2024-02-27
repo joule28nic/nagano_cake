@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get '/customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
     patch '/customers/withdraw' => 'customers#withdrawal', as: 'withdrawal'
     resources :items, only: [:index, :show]
+    resources :addresses, except: [:new, :show]
   end
 
 end
