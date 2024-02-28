@@ -27,7 +27,7 @@
 
       <div class="row mx-2 mb-5">
         <div class="col">
-          <h5 class="mb-0 d-inline-block">¥ <%= @item.add_tax_price %></h5>
+          <h5 class="mb-0 d-inline-block">¥ <%= @item.with_tax_price %></h5>
           <span class="mb-0 d-inline-block">(税込)</span>
           <h6 class="mb-0 d-inline-block"> <%= @item.is_active? ? '販売中' : '販売停止中' %></h6>
         </div>

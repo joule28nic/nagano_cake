@@ -31,6 +31,9 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show]
     resources :addresses, except: [:new, :show]
     resources :cart_items, only: [:index, :create, :update, :destroy]
+    resources :orders, only: [:new, :create, :index, :show]
+    # post 'orders#confirm'
+    # get 'orders#complete'
   end
 
 end

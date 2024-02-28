@@ -6,9 +6,9 @@ class Item < ApplicationRecord
   has_many :cart_items
   has_many :order_details
 
-  def add_tax_price
-    (self.price * 1.10).round
-    # round => 四捨五入
+  def with_tax_price
+    (price * 1.1).floor
+    # floor == 切り捨て
   end
 
   def get_image
