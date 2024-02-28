@@ -18,17 +18,31 @@
           <h3><%= @item.name %></h3>
         </div>
       </div>
+
       <div class="row mx-2">
         <div class="col">
           <p><%= @item.introduction %></p>
         </div>
       </div>
-      <div class="row mx-2">
+
+      <div class="row mx-2 mb-5">
         <div class="col">
           <h4 class="mb-0 d-inline-block">¥ <%= @item.add_tax_price %></h4>
           <span class="mb-0 d-inline-block">(税込)</span>
+          <h5 class="mb-0 d-inline-block"><%= @item.is_active? ? '販売中' : '販売停止中' %></h5>
         </div>
       </div>
+
+      <div class="row mx-2 mb-2">
+        <div class="col">
+          <h6>数量を選択して下さい。</h6>
+        </div>
+      </div>
+
+      <div class="row mx-2">
+        
+      </div>
+
     </div>
   </div>
 </div>
