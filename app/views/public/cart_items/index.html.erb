@@ -25,7 +25,7 @@
                 <td class="align-middle"><%= cart_item.item.with_tax_price.to_s(:delimited, delimiter: ',') %></td>
                 <td class="align-middle">
                   <%= form_with model: cart_item, url: cart_item_path(cart_item), local: true, method: :patch do |f| %>
-                    <%= f.number_field :amount, min: 1, max:10 %>
+                    <%= f.select :amount, *[1..10] %>
                     <%= f.submit "変更",class: "btn btn-success" %>
                   <% end %>
                 </td>
@@ -48,6 +48,7 @@
         <tbody>
           <th class="table-active">合計金額</th>
           <th>
+            <% @total = 0 %>
             <% @cart_items.each do |cart_item| %>
               <% @total += cart_item.subtotal %>
             <% end %>

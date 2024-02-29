@@ -32,8 +32,8 @@ Rails.application.routes.draw do
     resources :addresses, except: [:new, :show]
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :orders, only: [:new, :create, :index, :show]
-    # post 'orders#confirm'
-    # get 'orders#complete'
+    post 'orders/comfirm' => 'orders#comfirm', as: 'comfirm'
+    get 'orders/complete' => 'orders#complete', as: 'complete'
   end
 
 end
