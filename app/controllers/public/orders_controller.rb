@@ -7,6 +7,7 @@ class Public::OrdersController < ApplicationController
 
   def comfirm
     @order = Order.new(order_params)
+    @addresses = Address.where(customer_id: current_customer.id)
 
     if params[:order][:address_option] == "0"
       @order.postal_code = current_customer.postal_code
@@ -14,13 +15,13 @@ class Public::OrdersController < ApplicationController
       @order.name = current_customer.name
 
     elsif params[:order][:address_option] == "1"
-      ship = Address.find(params[:order][:member_id])
-      @order.post_code = ship.post_code
+      ship = @addresses.find(params[:order][:address_id])
+      @order.postal_code = ship.postal_code
       @order.address = ship.address
       @order.name = ship.name
 
     elsif params[:order][:address_option] == "2"
-      @order.post_code = params[:order][:post_code]
+      @order.postal_code = params[:order][:postal_code]
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
 
