@@ -31,12 +31,12 @@ Rails.application.routes.draw do
     patch 'customers/information' => 'customers#update'
     get '/customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
     patch '/customers/withdraw' => 'customers#withdrawal', as: 'withdrawal'
+    post 'orders/comfirm' => 'orders#comfirm', as: 'comfirm'
+    get 'orders/complete' => 'orders#complete', as: 'complete'
     resources :items, only: [:index, :show]
     resources :addresses, except: [:new, :show]
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :orders, only: [:new, :create, :index, :show]
-    post 'orders/comfirm' => 'orders#comfirm', as: 'comfirm'
-    get 'orders/complete' => 'orders#complete', as: 'complete'
   end
 
 end
