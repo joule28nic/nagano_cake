@@ -30,7 +30,8 @@ Rails.application.routes.draw do
     get 'customers/information/edit' => 'customers#edit'
     patch 'customers/information' => 'customers#update'
     get '/customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
-    patch '/customers/withdraw' => 'customers#withdrawal', as: 'withdrawal'
+    patch '/customers/withdraw' => 'customers#withdraw', as: 'withdraw'
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all'
     post 'orders/comfirm' => 'orders#comfirm', as: 'comfirm'
     get 'orders/complete' => 'orders#complete', as: 'complete'
     resources :items, only: [:index, :show]

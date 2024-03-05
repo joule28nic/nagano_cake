@@ -44,7 +44,7 @@
             <br />
             <div class="row mx-3">
               <div class="col">
-                <%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :address_display), id: "address" %>
+                <%= f.select :address_id, options_from_collection_for_select(@addresses, :id, :address_display), id: "address" %>
               </div>
             </div>
           </div>

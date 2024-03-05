@@ -1,6 +1,13 @@
 class Admin::ItemsController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
-    @items = Item.page(params[:page]).per(10)
+    @genres = Genre.all
+    # if params[:item_name]
+      # @items = Item.page(params[:page]).per(10).includes(:item_name)
+    # else
+      @items = Item.page(params[:page]).per(10)
+    # end
   end
 
   def new
@@ -30,6 +37,7 @@ class Admin::ItemsController < ApplicationController
       render edit_admin_item_path(@item)
     end
   end
+
 
   private
 

@@ -1,4 +1,5 @@
 class Admin::GenresController < ApplicationController
+  before_action :authenticate_admin!
 
   def create
     @new_genre = Genre.new(genre_params)
@@ -28,6 +29,7 @@ class Admin::GenresController < ApplicationController
       render admin_genres_path
     end
   end
+
 
   private
 

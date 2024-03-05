@@ -1,4 +1,5 @@
 class Admin::OrderDetailsController < ApplicationController
+  before_action :authenticate_admin!
 
   def update
     @order_detail = OrderDetail.find(params[:id])
@@ -21,7 +22,7 @@ class Admin::OrderDetailsController < ApplicationController
 
   def is_all_order_details_making_completed(order)
     order.order_details.each do |order_detail|
-      if order_detail.making_status != 'making_completed'
+      if order_detail.making_status != 'complete'
         return false
       end
     end
